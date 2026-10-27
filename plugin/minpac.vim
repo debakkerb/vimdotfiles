@@ -15,6 +15,10 @@ function! PackInit() abort
 
 	" lsp
 	call minpac#add('yegappan/lsp')
+
+	"FZF
+	call minpac#add('junegunn/fzf', {'do': {-> system('./install --bin')}})
+	call minpac#add('junegunn/fzf.vim')
 endfunction
 
 command! PackUpdate		call PackInit() | call minpac#update()
