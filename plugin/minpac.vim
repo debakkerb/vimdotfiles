@@ -19,6 +19,9 @@ function! PackInit() abort
 	"FZF
 	call minpac#add('junegunn/fzf', {'do': {-> system('./install --bin')}})
 	call minpac#add('junegunn/fzf.vim')
+
+	" ALE
+	call minpac#add('dense-analysis/ale')	
 endfunction
 
 command! PackUpdate		call PackInit() | call minpac#update()
