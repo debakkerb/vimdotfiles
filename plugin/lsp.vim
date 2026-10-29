@@ -1,23 +1,19 @@
-let lspOptions = #{
-	\ autoComplete: v:false,
-	\	omniCompleteAllowBare: v:true,
-	\ autoHighlight: v:true,
-	\ noNewlineInCompletion: v:true,
-	\ outlineOnRight: v:true,
-	\ }
+autocmd User LspAttached {
+	inoremap <S-TAB> <C-x><C-o>
+	
+	nnoremap <buffer> <silent> gd					<cmd>LspGotoDefinition<CR>
+	nnoremap <buffer> <silent> K					<cmd>LspHover<CR>
+	nnoremap <buffer> <silent> [d					<cmd>LspDiag prev<CR>
+	nnoremap <buffer> <silent> ]d					<cmd>LspDiag next<CR>
+	nnoremap <buffer> <silent> <leader>rn <cmd>LspRename<CR>
+	nnoremap <buffer> <silent> <leader>ca	<cmd>LspCodeAction<CR>
+}
 
-let lspServers = [
-	\ #{ name: 'gopls', filetype: ['go', 'gomod'], path: 'gopls', args: ['serve'] },
-\	]
-
-autocmd VimEnter * call LspOptionsSet(lspOptions)
-autocmd VimEnter * call LspAddServer(lspServers)
-
-inoremap <S-TAB> <C-x><C-o>
-
-nnoremap <leader>j	:LspHover<CR>
-nnoremap <leader>d	:LspGotoDefinition<CR>
-nnoremap <leader>p	:LspPeekDefinition<CR>
-nnoremap <leader>R	:LspRename<CR>
-nnoremap <leader>r	:LspPeekReferences<CR>
-nnoremap <leader>o	:LspDocumentSymbol<CR>
+autocmd User LspDetached {
+	silent !unmap <buffer> gd
+	silent !unmap <buffer> K
+	silent !unmap <buffer> [d
+	silent !unmap <buffer> ]d
+	silent !unmap <buffer> <leader>rn
+	silent !unmap <buffer> <leader>ca
+}
