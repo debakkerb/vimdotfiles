@@ -9,14 +9,6 @@ let g:ale_lint_on_insert_leave = 1
 let g:ale_lint_on_text_change = 'never'
 
 let g:ale_linters_explicit = 1
-let g:ale_linters = {
-			\ 'go': ['gofmt', 'govet', 'gobuild'],
-			\ }
-
-let g:ale_fixers = {
-			\ '*': ['trim_whitespace'],
-			\ 'go': ['gopls', 'goimports', 'gofmt'],
-			\ }
 
 let g:ale_warn_about_trailing_whitespace = 0
 let g:ale_lsp_show_message_severity = 'information'

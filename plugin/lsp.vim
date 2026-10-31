@@ -9,6 +9,7 @@ def g:LspAttachedMappings()
 	nnoremap <buffer> <silent> ]d					<cmd>LspDiag next<CR>
 	nnoremap <buffer> <silent> <leader>rn <cmd>LspRename<CR>
 	nnoremap <buffer> <silent> <leader>ca	<cmd>LspCodeAction<CR>
+	nnoremap <buffer> <silent> <leader>lf	<cmd>LspFormat<CR>
 enddef
 
 def g:LspDetachedMappings()
@@ -19,6 +20,7 @@ def g:LspDetachedMappings()
 	silent! nunmap <buffer> ]d
 	silent! nunmap <buffer> <leader>rn
 	silent! nunmap <buffer> <leader>ca
+	silent! nunmap <buffer> <leader>lf
 enddef
 
 autocmd User LspAttached call g:LspAttachedMappings()
