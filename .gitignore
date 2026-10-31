@@ -1,3 +1,4 @@
 pack/minpac/
 
 *.swp
+.DS_Store
