@@ -3,8 +3,9 @@ vim9script
 def g:SetupLspOptions()
 	var lspOptions = {
 		autoHighlight: true,	
+		completionMatcher: 'icase',
 		completionTextEdit: true,
-		noNewLineInCompletion: true,
+		noNewlineInCompletion: true,
 		outlineOnRight: true,
 		outlineWinSize: 70,
 		showDiagWithSign: false,
@@ -35,7 +36,7 @@ def g:SetupLsp()
 			},
 		}, {
 			name: 'tfls',
-			filetype: ['terraform'],
+			filetype: ['tf', 'terraform'],
 			path: '/opt/homebrew/bin/terraform-ls',
 			args: ['serve'],
 		}

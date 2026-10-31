@@ -27,3 +27,22 @@ endif
 " Plugin Manager
 packadd minpac
 call minpac#init()
+
+" Disable arrow keys
+nmap <Up>			<Nop>
+nmap <Down>		<Nop>
+nmap <Left>		<Nop>
+nmap <Right>	<Nop>
+
+imap <Up>			<Nop>
+imap <Down>		<Nop>
+imap <Left>		<Nop>
+imap <Right>	<Nop>
+
+" Other key bindings
+noremap		<C-x>			:bp<Bar>bd #<CR>
+noremap		<Tab>			>>
+noremap		<S-Tab>		<<
+vnoremap	<Tab>			>><Esc>gv
+vnoremap	<S-Tab>		<<<Esc>gv
+
