@@ -1,4 +1,6 @@
-autocmd User LspAttached {
+vim9script
+
+def g:LspAttachedMappings()
 	inoremap <S-TAB> <C-x><C-o>
 	
 	nnoremap <buffer> <silent> gd					<cmd>LspGotoDefinition<CR>
@@ -7,13 +9,17 @@ autocmd User LspAttached {
 	nnoremap <buffer> <silent> ]d					<cmd>LspDiag next<CR>
 	nnoremap <buffer> <silent> <leader>rn <cmd>LspRename<CR>
 	nnoremap <buffer> <silent> <leader>ca	<cmd>LspCodeAction<CR>
-}
+enddef
 
-autocmd User LspDetached {
-	silent !unmap <buffer> gd
-	silent !unmap <buffer> K
-	silent !unmap <buffer> [d
-	silent !unmap <buffer> ]d
-	silent !unmap <buffer> <leader>rn
-	silent !unmap <buffer> <leader>ca
-}
+def g:LspDetachedMappings()
+	silent! iunmap <S-TAB> 
+	silent! nunmap <buffer> gd
+	silent! nunmap <buffer> K
+	silent! nunmap <buffer> [d
+	silent! nunmap <buffer> ]d
+	silent! nunmap <buffer> <leader>rn
+	silent! nunmap <buffer> <leader>ca
+enddef
+
+autocmd User LspAttached call g:LspAttachedMappings()
+autocmd User LspDetached call g:LspDetachedMappings()

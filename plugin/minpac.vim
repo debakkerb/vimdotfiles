@@ -21,7 +21,10 @@ function! PackInit() abort
 	call minpac#add('junegunn/fzf.vim')
 
 	" ALE
-	call minpac#add('dense-analysis/ale')	
+	call minpac#add('dense-analysis/ale')
+
+	"	Mistfly - Status bar
+	call minpac#add('bluz71/vim-mistfly-statusline')
 endfunction
 
 command! PackUpdate		call PackInit() | call minpac#update()

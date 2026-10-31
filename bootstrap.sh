@@ -6,3 +6,4 @@ vim +PackUpdate +qa
 # Language Servers
 go install golang.org/x/tools/gopls@latest		# ~/go/bin
 npm install -g vim-language-server						# ~/opt/homebrew/bin/vim-language-server
+brew install hashicorp/tap/terraform-ls				# /opt/homebrew/bin/terraform-ls
