@@ -7,7 +7,7 @@ def g:LspAttachedMappings()
 	nnoremap <buffer> <silent> ]d					<cmd>LspDiag next<CR>
 	nnoremap <buffer> <silent> <leader>rn <cmd>LspRename<CR>
 	nnoremap <buffer> <silent> <leader>ca	<cmd>LspCodeAction<CR>
-	nnoremap <buffer> <silent> <leader>lf	<cmd>LspFormat<CR>
+	nnoremap <buffer> <silent> <leader>af	<cmd>ALEFix<CR>
 
 	# Enter = Accept highlighted item
 	inoremap <buffer>	<expr>	<CR>	pumvisible() && complete_info(['selected']).selected != -1 ? "\<C-y>" : "\<CR>"

@@ -1,5 +1,4 @@
 " VI Options
-
 filetype plugin indent on
 
 set hlsearch
@@ -14,6 +13,7 @@ set number
 set relativenumber
 
 set history=1000
+set scrolloff=8
 
 syntax on
 
@@ -23,6 +23,13 @@ let mapleader="\<space>"
 if has('termguicolors')
 	set termguicolors
 endif
+
+" Search
+augroup vimrc-incsearch-highlight
+	autocmd!
+	autocmd CmdLineEnter /,\? :set hlsearch
+	autocmd CmdLineLeave /,\? :set nohlsearch
+augroup END
 
 " Plugin Manager
 packadd minpac

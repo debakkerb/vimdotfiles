@@ -22,6 +22,9 @@ function! PackInit() abort
 
 	" ALE
 	call minpac#add('dense-analysis/ale')
+
+	" Dispatch
+	call minpac#add('tpope/vim-dispatch')
 endfunction
 
 command! PackUpdate		call PackInit() | call minpac#update()

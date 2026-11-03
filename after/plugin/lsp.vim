@@ -2,6 +2,7 @@ vim9script
 
 def g:SetupLspOptions()
 	var lspOptions = {
+		aleSupport: true,
 		autoHighlight: true,	
 		completionMatcher: 'icase',
 		completionTextEdit: true,
