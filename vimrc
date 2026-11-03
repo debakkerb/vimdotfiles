@@ -5,6 +5,8 @@ set hlsearch
 set incsearch
 set ignorecase
 
+set wrap
+
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
@@ -48,8 +50,7 @@ imap <Right>	<Nop>
 
 " Other key bindings
 noremap		<C-x>			:bp<Bar>bd #<CR>
-noremap		<Tab>			>>
 noremap		<S-Tab>		<<
+noremap		<Tab>			>>
 vnoremap	<Tab>			>><Esc>gv
 vnoremap	<S-Tab>		<<<Esc>gv
-
